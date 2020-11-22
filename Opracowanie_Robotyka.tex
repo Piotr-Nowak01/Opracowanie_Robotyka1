@@ -46,11 +46,17 @@ Dla:
 
 Warunki prawoskrętności:
 
-\begin{itemize}
-    \item $i \times j = k$
-    \item $j \times k = i$
-    \item $k \times j = j$
-\end{itemize}
+\Large
+$$
+	\left\{
+	\begin{array}{l}
+		j \times i = k \\
+		j \times k = i \\
+		k \times i = j
+	\end{array}
+	\right.
+$$
+\normalsize
 
 {\bf $T$} - (Translacja, czyli przesunięcie) - dowolna.
 
@@ -102,6 +108,18 @@ $$
 $$
     p_{0} = R_{0}^{1} \cdot p_{1}
 $$
+
+$$
+	p_0 = R_0^1 p_1
+	, \ \
+	R_0^1 =
+	\left[ \begin{array}{ccc}
+		i_1 i_0	& j_1 i_0	& k_1 i_0	\\
+		i_1 j_0	& j_1 j_0	& k_1 j_0	\\
+		i_1 k_0	& j_1 k_0	& k_1 k_0	\\
+	\end{array} \right]
+$$
+
 \normalsize
 
 \begin{itemize}
@@ -443,6 +461,13 @@ Jest to reprezentacja typu oś-kąt
 $$
     RPY\left(\phi, \theta, \psi\right)=rot(z, \psi) \cdot rot(y, \theta) \cdot rot(x, \psi)
 $$
+$$
+    RPY( \phi, \theta, \psi ) = \begin{bmatrix} \begin{array}{rrr}
+        c_{\phi} c_{\theta}   & -s_{\phi} c_{\theta} + c_{\phi} s_{\theta} s_{\psi} & s_{\phi} s_{\psi} + c_{\phi} s_{\theta} c_{\psi}  \\
+        s_{\phi} c_{\theta}   & c_{\phi} c_{\psi} + s_{\phi} s_{\theta} s_{\psi}    & -c_{\phi} s_{\psi} + s_{\phi} s_{\theta} c_{\psi}  \\
+        -s_{\theta}           & c_{\theta} s_{\psi}                                 & c_{\theta} c_{\psi}  \\
+    \end{array} \end{bmatrix}
+$$
 \normalsize
 
 
@@ -505,6 +530,9 @@ Jakiej macierzy odpowiada obrót wokół wektora {\bf k} o kąt $\theta$?
 
 
 \Large
+$$
+    rot(k, \theta ) = I_{3} + [-k] sin \theta + (1-cos \theta ) [k]^2
+$$
 $$
     rot(k, \theta)=
     \begin{bmatrix}
