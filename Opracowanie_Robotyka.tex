@@ -10,6 +10,12 @@
 \usepackage{hyperref}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
+% czcionka i marginesy
+\usepackage[left=2cm,right=2cm,top=2.54cm,bottom=2.54cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Calibri}
+%
+
 \title{Opracowanie Robotyka}
 \author{Jan Bronicki}
 \date{}
@@ -19,8 +25,8 @@
 
 \maketitle
 
-
-
+\tableofcontents
+\newpage
 \section{Wykład 1}
 
 
@@ -329,20 +335,22 @@ Ważne:
 
 \subsection{Składanie ruchów}
 
-\Large
 \begin{enumerate}
     \item {\bf Względem osi bieżących (np. nasz statek, którym sterujemy)}
 
           Mnożymy od lewej do prawej:
+          \Large
           $$
               K_{0}^{n} = K_{0}^{\bcancel{1}}\cdot K_{\bcancel{1}}^{\bcancel{2}} \cdot K_{\bcancel{2}}^{3} \cdot \ldots \cdot K_{n-1}^{n}
           $$
+          \normalsize
 
           Nie jest ważne przez jakie macierze przechodziliśmy, ważne jest jak skończyliśmy.
 
 
           Przykład mnożenie:
 
+        \Large
           $$
               K_{0}^{1} =
               \begin{bmatrix}
@@ -377,6 +385,7 @@ Ważne:
                   \end{array}
               \end{bmatrix}
           $$
+          \normalsize
 
 
 
@@ -533,6 +542,7 @@ Jakiej macierzy odpowiada obrót wokół wektora {\bf k} o kąt $\theta$?
 $$
     rot(k, \theta ) = I_{3} + [-k] sin \theta + (1-cos \theta ) [k]^2
 $$
+
 $$
     rot(k, \theta)=
     \begin{bmatrix}
@@ -575,6 +585,7 @@ Jest to transformacja odwrotna do transformacji {\bf oś-kąt}
 
 Zakładamy, że ruch polega wyłącznie na zmianie orientacji ciała (brak translacji), czyli:
 
+\Large
 $$
     c\left(t\right)=
     \begin{bmatrix}
@@ -584,6 +595,7 @@ $$
     \cong
     R(t)
 $$
+\normalsize
 
 Ponieważ $R(t)$ jest macierzą {\bf ortogonalną}, w każdej chwili zachodzi:
 
@@ -606,26 +618,26 @@ Otrzymujemy dwa pojęcia prędkości kątowej ciała sztywnego zdefniniowane mac
 
 
 Zachodzi:
-
+\Large
 $$
     \dot R =\Omega_{S}R=R\Omega_{B} \rightarrow \Omega_{S}=R\Omega_{B}R^{T}
 $$
-
+\normalsize
 Obie macierze prędkości kątowej spełniają warunek:
-
+\Large
 $$
     \Omega+\Omega^{T}=0
 $$
-
+\normalsize
 Macierz antysymetryczna/skośnie symetryczna:
-
+\Large
 $$
     \Omega = -\Omega^{T}
 $$
-
+\normalsize
 
 Macierze $\Omega_{S}$ i $\Omega_{B}$ są skośnie symetryczne. Każda macierz skośnie symetryczna $3\times3$ jest zdefiniowana przez trzy parametry $\omega = \left(\omega_{1}, \omega_{2}, \omega_{3}\right)^{T}$:
-
+\Large
 $$
     \Omega=\left[\omega\right]=
     \begin{bmatrix}
@@ -634,12 +646,14 @@ $$
         -\omega_{2} & \omega_{1}  & 0
     \end{bmatrix}
 $$
-
+\normalsize
 Rozmieszczenie składowych wektora $\omega$ w macierzy $\left[\omega\right]$ jest takie żeby (gdzie $v$ to wektor w 3D):
 
+\Large
 $$
     \Omega v = \omega \times v
 $$
+\normalsize
 
 \newpage
 
@@ -716,7 +730,7 @@ $$
 
 
 tzn.
-
+\Large
 $$
     V_{S}=
     \begin{bmatrix}
@@ -736,7 +750,7 @@ $$
         \omega_{S}
     \end{pmatrix}
 $$
-
+\normalsize
 \newpage
 
 Wektor $v_{S} \in \mathbb{R}^{6}$ reprezentujący macierz $V_{S}$ nazywany {\bf skrętnikiem w przestrzeni}. W podobny sposób wyznaczamy $V_{B}$:
