@@ -17,7 +17,7 @@
 %
 
 \title{Opracowanie Robotyka}
-\author{Jan Bronicki}
+\author{Jan Bronicki, Mateusz Górka}
 \date{}
 
 
@@ -888,20 +888,107 @@ Chcemy za ich pomocą wyrazić kinematykę manipulatora czyli powiedzieć gdzie 
 
 \Large
 $$
-    A_{i-1}^i (q_i) = Rot(Z,q_i) \cdot Trans(Z,d_1) \cdot Trans( X, \alpha_i ) \cdot Rot( X, \alpha_i )
+    A_{i-1}^i (q_i) = Rot(Z,q_i) \cdot Trans(Z,d_1) \cdot Trans( X, a_i ) \cdot Rot( X, \alpha_i )
 $$
 \normalsize
 
 \begin{table}[h!]
     \centering
     \Large
-    \begin{tabular}{|c|c|c|c|c|}
-        & $\theta_i$& $d_i$     & $a_i$     & $\alpha_i$\\ \hline
+    \begin{tabular}{c|c|c|c|c}
+            & $\theta_i$& $d_i$     & $a_i$     & $\alpha_i$\\ \hline
         1   &           &           &           &           \\ \hline
         2   &           &           &           &           \\ \hline
-        3   &           &           &           &           \\ \hline
+        3   &           &           &           &           \\
     \end{tabular}
 \end{table}
+
+
+\section{Kinematyka}
+
+Współrzedne efektora:
+$$
+    y(t) = k( q(t) )
+$$
+
+Prędkość ruchu efektora:
+$$
+    \dot{y}(t) = J(q) \dot{q}
+    \ \ \ \
+    J(t) = \frac{\delta k}{\delta q}
+$$
+
+\subsection{Macierz kinematyki}
+\Large
+$$
+    K \in \textbf{R}^6, \ \
+    K = \begin{bmatrix}
+        T \\
+        todo
+    \end{bmatrix}
+$$
+\normalsize
+
+Pierwsze 3 elementy $K$ określają współrzędne kartezjańskiego, drugie 3 współrzene obrotowe.
+
+\subsection{Jakobian}
+\Large
+$$
+    J = \begin{bmatrix}
+        todo
+    \end{bmatrix}
+$$
+\normalsize
+
+Jakobian manipulatora
+\Large
+$$
+    J(q) \dot{q} =
+    \left(
+    \begin{array}{c}
+        \dot{T} \\
+        \omega_s
+    \end{array}
+    \right)
+$$
+\normalsize
+
+\newpage
+
+\section{Przydatne wzorki}
+\subsection{Trygonometria}
+
+\noindent
+Suma kątów
+
+$$  \sin{\alpha}\pm\sin{\beta}=
+    2\sin{\frac{\left(\alpha\pm\beta\right)}{2}}
+    \cos{\frac{\left(\alpha\mp\beta\right)}{2}} $$
+$$  \cos{\alpha}+\cos{\beta}=
+    2\cos{\frac{\left(\alpha+\beta\right)}{2}}
+    \cos{\frac{\left(\alpha-\beta\right)}{2}} $$
+
+\noindent
+Wzory redukcyjne
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c c}
+        Parzystość f.       & Nieparzystość f. \\ \hline
+        $cos(x) = cos(-x)$  & $sin(-x) = - sin(x)$ \\
+                            & $tg(-x) = -tg(x)$ \\
+                            & $ctg(-x) = - ctg(x)$ \\
+    \end{tabular}
+\end{table}
+
+\noindent
+Funkcje sumy kątów lub ich wielokrotności
+
+$$  sin( x\pm y) = sin(x)cos(y) \pm cos(x)sin(y) $$
+$$  cos( x\pm y) = cos(x)cos(y) \mp sin(x)sin(y) $$
+$$  sin(2x) = 2sin(x)cos(x) $$
+$$  cos(2x) = sin^2x - cos^2x   $$
+
 
 
 \end{document}
