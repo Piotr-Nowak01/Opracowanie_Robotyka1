@@ -941,7 +941,7 @@ Pierwsze 3 elementy $K$ określają współrzędne kartezjańskiego, drugie 3 ws
 \subsection{Jakobian}
 \Large
 $$
-    J_{m\times n} = \begin{bmatrix}
+    J(q)_{m\times n} = \begin{bmatrix}
         \frac{\delta k_1}{\delta q} \\
         \frac{\delta k_2}{\delta q} \\
         ... \\
@@ -959,19 +959,6 @@ $$
         ... &
         \frac{\delta k_m}{\delta q_n}
     \end{bmatrix}
-$$
-\normalsize
-
-Jakobian:
-\Large
-$$
-    J(q) \dot{q} =
-    \left(
-    \begin{array}{c}
-        \dot{T} \\
-        \omega_s
-    \end{array}
-    \right)
 $$
 \normalsize
 
