@@ -16,6 +16,9 @@
 \setmainfont{Calibri}
 %
 
+% Dzielenie sekcji na dwie kolumny
+\newenvironment{kol2}{\noindent \begin{minipage}[t]{0.5\linewidth}}{\end{minipage}}
+
 \title{Opracowanie Robotyka}
 \author{Jan Bronicki, Mateusz Górka}
 \date{}
@@ -911,11 +914,11 @@ $$
     y(t) = k( q(t) )
 $$
 
-Prędkość ruchu efektora:
+Prędkość ruchu efektora. $J(q)$ - jest jakobianem analitycznym:
 $$
     \dot{y}(t) = J(q) \dot{q}
     \ \ \ \
-    J(t) = \frac{\delta k}{\delta q}
+    J(q) = \frac{\delta k}{\delta q}
 $$
 
 \subsection{Macierz kinematyki}
@@ -923,8 +926,12 @@ $$
 $$
     K \in \textbf{R}^6, \ \
     K = \begin{bmatrix}
-        T \\
-        todo
+        x_{ch} \\
+        y_{ch} \\
+        z_{ch} \\
+        \phi \\
+        \theta \\
+        \xi
     \end{bmatrix}
 $$
 \normalsize
@@ -934,13 +941,28 @@ Pierwsze 3 elementy $K$ określają współrzędne kartezjańskiego, drugie 3 ws
 \subsection{Jakobian}
 \Large
 $$
-    J = \begin{bmatrix}
-        todo
+    J_{m\times n} = \begin{bmatrix}
+        \frac{\delta k_1}{\delta q} \\
+        \frac{\delta k_2}{\delta q} \\
+        ... \\
+        \frac{\delta k_m}{\delta q}
+    \end{bmatrix}
+    = \begin{bmatrix}
+        \frac{\delta k_1}{\delta q_1} &
+        \frac{\delta k_1}{\delta q_2} &
+        ... &
+        \frac{\delta k_1}{\delta q_n} \\
+        \vdots \\
+        \vdots \\
+        \frac{\delta k_m}{\delta q_1} &
+        \frac{\delta k_m}{\delta q_2} &
+        ... &
+        \frac{\delta k_m}{\delta q_n}
     \end{bmatrix}
 $$
 \normalsize
 
-Jakobian manipulatora
+Jakobian:
 \Large
 $$
     J(q) \dot{q} =
@@ -952,6 +974,50 @@ $$
     \right)
 $$
 \normalsize
+
+% praca wirtualna wykład 11-04, 32:00
+\subsubsection{Zasada Pracy Wirtualnej}
+(Wymiennie z "Zasadą Mocy Wirtualnej")
+
+$$  \tau^T\ dy = f^T dq                 \hspace{1cm}
+    \tau^T\ \dot{y} = f^T \dot{q}       \hspace{1cm}
+    \tau^T J \dot{q} = f^T \dot{q}      \hspace{1cm}
+$$
+
+\Large
+$$ f = \tau J^T $$
+\normalsize
+
+\begin{kol2}
+    Praca w przestrzeni zewnętrznej
+    $$ \tau^T\ dy $$
+    $\tau$ - siły (/momenty sił) wywiarne na chwytak
+\end{kol2}
+\begin{kol2}
+    Praca w przestrzeni przegubowej
+    $$ f^t\ dq$$
+    $f$ - siły (/momenty sił) wywiarne w przegubach
+\end{kol2}
+
+% praca wirtualna wykład 11-04, 54:00
+\subsubsection{Konfiguracje osobliwe i regularne}
+
+$$ rank\{J\} \leq min\{ m, n \} $$
+
+\begin{enumerate}
+    \item Konfiguracja regularna - jakobian nie traci rzędu
+    \item Konfiguracja osobliwa - jakobian traci rząd wierszowy.
+
+    Wierszowy, bo to znaczy, że pewna współrzędna w tej konfiguracji nie wpływa na położenie chwytaka.
+
+    \begin{enumerate}
+        \item $m > n$ - wszystkie konfiguracje są osobliwe;
+        \item $m = n$ - osobliwa, tylko i tylko w tedy, gdy $ det{J} = 0$;
+        \item $m < n$ (przypadek redundantny) osobliwość,
+        gdy wszystkie minory stopnia $m$ są równe $0$ ("największe możliwe minory").
+    \end{enumerate}
+
+\end{enumerate}
 
 \newpage
 
