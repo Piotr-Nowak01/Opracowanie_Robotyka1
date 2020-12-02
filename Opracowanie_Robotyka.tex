@@ -57,13 +57,13 @@ Warunki prawoskrętności:
 
 \Large
 $$
-	\left\{
-	\begin{array}{l}
-		j \times i = k \\
-		j \times k = i \\
-		k \times i = j
-	\end{array}
-	\right.
+    \left\{
+    \begin{array}{l}
+        j \times i = k \\
+        j \times k = i \\
+        k \times i = j
+    \end{array}
+    \right.
 $$
 \normalsize
 
@@ -119,14 +119,14 @@ $$
 $$
 
 $$
-	p_0 = R_0^1 p_1
-	, \ \
-	R_0^1 =
-	\left[ \begin{array}{ccc}
-		i_1 i_0	& j_1 i_0	& k_1 i_0	\\
-		i_1 j_0	& j_1 j_0	& k_1 j_0	\\
-		i_1 k_0	& j_1 k_0	& k_1 k_0	\\
-	\end{array} \right]
+    p_0 = R_0^1 p_1
+    , \ \
+    R_0^1 =
+    \left[ \begin{array}{ccc}
+            i_1 i_0 & j_1 i_0 & k_1 i_0 \\
+            i_1 j_0 & j_1 j_0 & k_1 j_0 \\
+            i_1 k_0 & j_1 k_0 & k_1 k_0 \\
+        \end{array} \right]
 $$
 
 \normalsize
@@ -353,7 +353,7 @@ Ważne:
 
           Przykład mnożenie:
 
-        \Large
+          \Large
           $$
               K_{0}^{1} =
               \begin{bmatrix}
@@ -475,10 +475,10 @@ $$
 $$
 $$
     RPY( \phi, \theta, \psi ) = \begin{bmatrix} \begin{array}{rrr}
-        c_{\phi} c_{\theta}   & -s_{\phi} c_{\theta} + c_{\phi} s_{\theta} s_{\psi} & s_{\phi} s_{\psi} + c_{\phi} s_{\theta} c_{\psi}  \\
-        s_{\phi} c_{\theta}   & c_{\phi} c_{\psi} + s_{\phi} s_{\theta} s_{\psi}    & -c_{\phi} s_{\psi} + s_{\phi} s_{\theta} c_{\psi}  \\
-        -s_{\theta}           & c_{\theta} s_{\psi}                                 & c_{\theta} c_{\psi}  \\
-    \end{array} \end{bmatrix}
+            c_{\phi} c_{\theta} & -s_{\phi} c_{\theta} + c_{\phi} s_{\theta} s_{\psi} & s_{\phi} s_{\psi} + c_{\phi} s_{\theta} c_{\psi}  \\
+            s_{\phi} c_{\theta} & c_{\phi} c_{\psi} + s_{\phi} s_{\theta} s_{\psi}    & -c_{\phi} s_{\psi} + s_{\phi} s_{\theta} c_{\psi} \\
+            -s_{\theta}         & c_{\theta} s_{\psi}                                 & c_{\theta} c_{\psi}                               \\
+        \end{array} \end{bmatrix}
 $$
 \normalsize
 
@@ -877,16 +877,16 @@ Chcemy za ich pomocą wyrazić kinematykę manipulatora czyli powiedzieć gdzie 
 
 % 3:40 wyk4
 \begin{enumerate}
-\item Przyjmujemy oś $Z_i$ tak, by ruch w przegubie następnym przegubie ($i+1$) zachodził względem niej;
-\item Prowadziny normalną do osi $Z_{i-1}$ i $Z_i$;
-\item Początek układu $i$ umieszczany na przecięciu normalnej z osią $Z_i$;
-\item oś $X$ prowadzimy wzdłuż normalnej, oś $Y_i$ spełnia warunek $X_u \times Y_i = Z_i$
-\item (a oś $Y$, nie jest nam potrzebna)
-\begin{enumerate}
-    \item Jeśli koeljne osie $Z$ są równoległe (nieskończenie wiele normalnych),
-    to wybieramy przechodzącą przez początek układu $i-1$
-    \item jeśli $Z_{i-1} = Z_i$, to postępujemy "zgodnie ze zdrowym rozsądkiem"
-\end{enumerate}
+    \item Przyjmujemy oś $Z_i$ tak, by ruch w przegubie następnym przegubie ($i+1$) zachodził względem niej;
+    \item Prowadziny normalną do osi $Z_{i-1}$ i $Z_i$;
+    \item Początek układu $i$ umieszczany na przecięciu normalnej z osią $Z_i$;
+    \item oś $X$ prowadzimy wzdłuż normalnej, oś $Y_i$ spełnia warunek $X_u \times Y_i = Z_i$
+    \item (a oś $Y$, nie jest nam potrzebna)
+          \begin{enumerate}
+              \item Jeśli koeljne osie $Z$ są równoległe (nieskończenie wiele normalnych),
+                    to wybieramy przechodzącą przez początek układu $i-1$
+              \item jeśli $Z_{i-1} = Z_i$, to postępujemy "zgodnie ze zdrowym rozsądkiem"
+          \end{enumerate}
 \end{enumerate}
 
 \Large
@@ -899,10 +899,10 @@ $$
     \centering
     \Large
     \begin{tabular}{c|c|c|c|c}
-            & $\theta_i$& $d_i$     & $a_i$     & $\alpha_i$\\ \hline
-        1   &           &           &           &           \\ \hline
-        2   &           &           &           &           \\ \hline
-        3   &           &           &           &           \\
+          & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$ \\ \hline
+        1 &            &       &       &            \\ \hline
+        2 &            &       &       &            \\ \hline
+        3 &            &       &       &            \\
     \end{tabular}
 \end{table}
 
@@ -929,7 +929,7 @@ $$
         x_{ch} \\
         y_{ch} \\
         z_{ch} \\
-        \phi \\
+        \phi   \\
         \theta \\
         \xi
     \end{bmatrix}
@@ -944,19 +944,19 @@ $$
     J(q)_{m\times n} = \begin{bmatrix}
         \frac{\delta k_1}{\delta q} \\
         \frac{\delta k_2}{\delta q} \\
-        ... \\
+        ...                         \\
         \frac{\delta k_m}{\delta q}
     \end{bmatrix}
     = \begin{bmatrix}
         \frac{\delta k_1}{\delta q_1} &
         \frac{\delta k_1}{\delta q_2} &
-        ... &
-        \frac{\delta k_1}{\delta q_n} \\
-        \vdots \\
-        \vdots \\
+        ...                           &
+        \frac{\delta k_1}{\delta q_n}   \\
+        \vdots                          \\
+        \vdots                          \\
         \frac{\delta k_m}{\delta q_1} &
         \frac{\delta k_m}{\delta q_2} &
-        ... &
+        ...                           &
         \frac{\delta k_m}{\delta q_n}
     \end{bmatrix}
 $$
@@ -995,14 +995,14 @@ $$ rank\{J\} \leq min\{ m, n \} $$
     \item Konfiguracja regularna - jakobian nie traci rzędu
     \item Konfiguracja osobliwa - jakobian traci rząd wierszowy.
 
-    Wierszowy, bo to znaczy, że pewna współrzędna w tej konfiguracji nie wpływa na położenie chwytaka.
+          Wierszowy, bo to znaczy, że pewna współrzędna w tej konfiguracji nie wpływa na położenie chwytaka.
 
-    \begin{enumerate}
-        \item $m > n$ - wszystkie konfiguracje są osobliwe;
-        \item $m = n$ - osobliwa, tylko i tylko w tedy, gdy $ det{J} = 0$;
-        \item $m < n$ (przypadek redundantny) osobliwość,
-        gdy wszystkie minory stopnia $m$ są równe $0$ ("największe możliwe minory").
-    \end{enumerate}
+          \begin{enumerate}
+              \item $m > n$ - wszystkie konfiguracje są osobliwe;
+              \item $m = n$ - osobliwa, tylko i tylko w tedy, gdy $ det{J} = 0$;
+              \item $m < n$ (przypadek redundantny) osobliwość,
+                    gdy wszystkie minory stopnia $m$ są równe $0$ ("największe możliwe minory").
+          \end{enumerate}
 
 \end{enumerate}
 
@@ -1029,12 +1029,12 @@ $$ rank\{J\} \leq min\{ m, n \} $$
     Wartości funckji
     $$
         \begin{array}{c|c|c|c|c|c|c}
-            & 0^\circ   & 30^\circ      & 45^\circ      & 60^\circ      & 90^\circ  & 180^\circ  \\
-            & 0         & \frac\pi6     & \frac\pi4     & \frac{\pi}3   & \frac\pi2 & \frac\pi2  \\ \hline
-        sin & 0         & \frac12       & \frac{\sqrt2}2&\frac{\sqrt3}2 & 1         & 0  \\
-        cos & 1         & \frac{\sqrt2}2& \frac{\sqrt2}2& \frac12       & 0         & -1 \\ \hline
-        tg  & 0         & \frac{\sqrt3}3& 1             & \sqrt3        & -         & 0  \\
-        ctg & -         & \sqrt3        & 1             & \frac{\sqrt3}3& 1         & -  \\
+                & 0^\circ & 30^\circ       & 45^\circ       & 60^\circ       & 90^\circ  & 180^\circ \\
+                & 0       & \frac\pi6      & \frac\pi4      & \frac{\pi}3    & \frac\pi2 & \frac\pi2 \\ \hline
+            sin & 0       & \frac12        & \frac{\sqrt2}2 & \frac{\sqrt3}2 & 1         & 0         \\
+            cos & 1       & \frac{\sqrt2}2 & \frac{\sqrt2}2 & \frac12        & 0         & -1        \\ \hline
+            tg  & 0       & \frac{\sqrt3}3 & 1              & \sqrt3         & -         & 0         \\
+            ctg & -       & \sqrt3         & 1              & \frac{\sqrt3}3 & 1         & -         \\
         \end{array}
     $$
 \end{kol2}
@@ -1058,10 +1058,10 @@ $$ rank\{J\} \leq min\{ m, n \} $$
 
     \centering
     \begin{tabular}{c c}
-        Parzystość f.       & Nieparzystość f. \\ \hline
-        $cos(x) = cos(-x)$  & $sin(-x) = - sin(x)$ \\
-                            & $tg(-x) = -tg(x)$ \\
-                            & $ctg(-x) = - ctg(x)$ \\
+        Parzystość f.      & Nieparzystość f.     \\ \hline
+        $cos(x) = cos(-x)$ & $sin(-x) = - sin(x)$ \\
+                           & $tg(-x) = -tg(x)$    \\
+                           & $ctg(-x) = - ctg(x)$ \\
     \end{tabular}
 
     $$  sin( x \pm \frac{\pi}{2} ) = \pm cos( x ) $$
